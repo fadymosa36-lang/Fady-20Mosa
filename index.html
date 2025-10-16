@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> Portfolio</title>
+  <style>
+    :root {
+      --bg:#0f1724; --card:#0b1220; --muted:#98a0b3; --accent:#06b6d4;
+      --maxw:1100px; color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+      margin:0; background:linear-gradient(180deg,var(--bg),#071024);
+      color:#e6eef6; -webkit-font-smoothing:antialiased;
+    }
+    .container{max-width:var(--maxw);margin:32px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);
+      display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a.active{color:#fff;border-bottom:2px solid var(--accent);padding-bottom:6px}
+    main{margin-top:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:28px;border-radius:14px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    .row{display:flex;gap:24px;align-items:flex-start}
+    .col{flex:1}
+    .hero{display:flex;gap:24px;align-items:center}
+    .hero .intro{flex:1}
+    .avatar{width:160px;height:160px;border-radius:12px;overflow:hidden}
+    .avatar img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+    h1{margin:0 0 8px 0;font-size:28px}
+    p.lead{color:var(--muted);margin:0 0 12px 0}
+    .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#022;
+      padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+      padding:18px;border-radius:12px}
+    .skills{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:8px;font-weight:600;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:12px}
+    .project{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02))}
+    .project h3{margin:0 0 6px 0}
+    .muted{color:var(--muted)}
+    ul.goals{color:var(--muted);line-height:1.6;margin-top:8px;padding-left:20px}
+    ul.goals li{margin-bottom:6px}
+    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:900px){
+      .row{flex-direction:column}
+      .hero{flex-direction:column}
+      .avatar{width:120px;height:120px}
+      nav a{margin-left:12px}
+    }
+    .page{display:none;opacity:0;transform:translateY(6px);transition:all .28s ease}
+    .page.visible{display:block;opacity:1;transform:none}
+    .contact-info div{margin:6px 0}
+    .contact-info a{color:var(--accent);text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">YN</div>
+        <div>
+          <div style="font-weight:800"><span id="js-name">Welcom to My portfolio</span></div>
+          <div class="muted" style="font-size:13px">Frontend Developer</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#home" data-link="home" class="active">Home</a>
+        <a href="#about" data-link="about">Goals</a>
+        <a href="#projects" data-link="projects">Projects</a>
+        <a href="#contact" data-link="contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Home -->
+      <section id="home" class="page visible">
+        <div class="row hero">
+          <div class="col intro">
+            <h1>Hi — I'm <span id="hero-name">Fady Mosa</span></h1>
+            <p class="lead">Computer Science Student · Year 1 · GPA: 3.52.</p>
+            <a class="cta" href="#projects" data-link="projects">See my work</a>
+          </div>
+          <div class="avatar">
+            <img src="myphoto.jpg" alt="My Photo">
+          </div>
+        </div>
+
+        <!-- نبذة عني -->
+        <div style="margin-top:20px" class="card">
+          <h2>About Me</h2>
+          <p class="muted">
+            I’m a passionate web and software developer skilled in HTML, CSS, C, C++, and Java. 
+            I enjoy creating responsive and user-friendly websites with clean code and modern designs. 
+            I’m always learning new technologies and improving my skills to deliver better digital experiences.
+          </p>
+        </div>
+
+        <!-- المهارات -->
+        <div style="margin-top:20px" class="card">
+          <div style="font-weight:800;margin-bottom:8px">Skills</div>
+          <div class="skills">
+            <div class="tag">HTML</div>
+            <div class="tag">CSS</div>
+            <div class="tag">C</div>
+            <div class="tag">C++</div>
+            <div class="tag">Java</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Goals -->
+      <section id="about" class="page">
+        <div class="card">
+          <h2>My Goals</h2>
+          <p class="muted">Here are some of my main professional goals as a developer:</p>
+          <ul class="goals">
+            <li>To continuously improve my programming skills and learn new technologies.</li>
+            <li>To build modern, efficient, and user-friendly web applications.</li>
+            <li>To collaborate with teams and contribute to impactful software projects.</li>
+            <li>To gain more experience in both frontend and backend development.</li>
+            <li>To grow into a full-stack developer and mentor others in the field.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="page">
+        <div class="card">
+          <h2> Projects</h2>
+          
+          <div class="grid">
+            <article class="project">
+              <h3>SealPersonal Problem (Discrete Structures Project)</h3>
+              <div class="muted">Built a program to solve the SealPersonal problem as part of Discrete Structures coursework, applying logic and computational thinking.</div>
+              
+            </article>
+           
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="page">
+        <div class="card">
+          <h2>Contact Me</h2>
+          <p class="muted">You can reach me anytime through the following links:</p>
+          <div class="contact-info">
+            <div><strong>Email:</strong> <a href="mailto:you@example.com">fadymosa**@gmail.com</a></div>
+            <div><strong>Phone:</strong> <a href="tel:+201000000000">01278796326</a></div>
+            <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="js-year"></span> <span id="js-name-footer">Your Name</span> — Built with HTML, CSS & JS
+    </footer>
+  </div>
+
+  <script>
+    const pages=document.querySelectorAll('.page');
+    const links=document.querySelectorAll('nav a');
+    function showPage(id){pages.forEach(p=>p.classList.toggle('visible',p.id===id));links.forEach(a=>a.classList.toggle('active',a.dataset.link===id));}
+    function onNav(){const hash=location.hash.replace('#','')||'home';showPage(hash);}
+    window.addEventListener('hashchange',onNav);
+    window.addEventListener('load',()=>{onNav();document.getElementById('js-year').textContent=new Date().getFullYear();});
+  </script>
+</body>
+</html>
